@@ -15,7 +15,7 @@ declare type FlashImages = {
     off: ImageSourcePropType;
     auto: ImageSourcePropType;
 };
-declare type BottomButtonTypes = 'left' | 'capture';
+declare type BottomButtonTypes = 'left' | 'capture' | 'right';
 declare type BottomPressedData = {
     type: BottomButtonTypes;
     captureImages: CaptureData[];
@@ -76,7 +76,7 @@ export default class CameraScreen extends Component<CameraScreenProps, State> {
     renderRatioStrip(): JSX.Element | null;
     sendBottomButtonPressedAction(type: BottomButtonTypes, captureRetakeMode: boolean, image?: CaptureData): void;
     onBottomButtonPressed(type: BottomButtonTypes): void;
-    renderBottomButton(type: 'left'): JSX.Element;
+    renderBottomButton(type: BottomButtonTypes): JSX.Element;
     renderBottomButtons(): false | JSX.Element;
     onSwitchCameraPressed(): void;
     onSetFlash(): void;

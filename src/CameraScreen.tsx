@@ -33,7 +33,7 @@ type FlashImages = {
   auto: ImageSourcePropType;
 };
 
-type BottomButtonTypes = 'left' | 'capture';
+type BottomButtonTypes = 'left' | 'capture' | 'right';
 
 type BottomPressedData = {
   type: BottomButtonTypes;
@@ -288,7 +288,7 @@ export default class CameraScreen extends Component<CameraScreenProps, State> {
     }
   }
 
-  renderBottomButton(type: 'left' | 'right') {
+  renderBottomButton(type: BottomButtonTypes) {
     const showButton = true;
     if (showButton) {
       const buttonNameSuffix = this.isCaptureRetakeMode() ? 'CaptureRetakeButtonText' : 'ButtonText';
